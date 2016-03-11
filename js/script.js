@@ -92,7 +92,7 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-  // console.log("buildAndShowHomeHTML Called:", categories);
+  console.log("buildAndShowHomeHTML Called:", categories);
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
@@ -116,11 +116,12 @@ function buildAndShowHomeHTML (categories) {
       // 
 			var quotedShortName = "'" + chosenCategoryShortName + "'";
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", quotedShortName);
-      
+			
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that. 
       //
+			console.log("homeHtml:", homeHtml);
 			insertHtml("#main-content", homeHtml);
       
     },
